@@ -21,7 +21,7 @@
 
 3. 找到秘钥
 
-![](111.jpg)
+![](111.png)
 
 4. 打开秘钥并复制到github的settings的[SSH and GPG keys](https://github.com/settings/keys)
 
