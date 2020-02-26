@@ -72,7 +72,7 @@ python3 manage.py startapp 应用名
 
 3. 更多静态文件资源配置(了解）
 
-   ```
+   ```python
    STATICFILES_DIRS = [  # 一旦接口前缀正确 会按照从上往下的顺序依次去下面的文件夹中查找文件,找到一个立刻结束
    os.path.join(BASE_DIR,'static'),  # 将static文件夹暴露给外界
    os.path.join(BASE_DIR,'static1'),  # 将static文件夹暴露给外界
@@ -95,7 +95,7 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
-	我们自己创建的app必须要到这个地方注册
+	# 我们自己创建的app必须要到这个地方注册
 	'app01.apps.App01Config'  # 全写
 	'app01'  # 支持简写
 ]
@@ -761,6 +761,15 @@ class AuthorDetail(models.Model):
 
    ```python
    # 查询是东方出版社出过的书籍
+   publish_obj = models.Publish.objects.filter(name='东方出版社').first()
+   res = publish_obj.book1_set.all().values('title',)
+   print(res)
+   ```
+
+   * 例题五
+
+   ```python
+   
    ```
 
    
