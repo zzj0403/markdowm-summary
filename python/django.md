@@ -474,6 +474,8 @@ import pymysql
 pymysql.install_as_MySQLdb()
 ```
 
+
+
 ### django对库的[命令](http://naotu.baidu.com/file/3d05365eaff310f683d09833b58284e4?token=86e1300d52704336)
 
 1. 创建库[参考](https://www.cnblogs.com/liuqingzheng/articles/9627915.html)
@@ -535,18 +537,18 @@ pymysql.install_as_MySQLdb()
 
 3. 双下划线操作
 
-```python
-res = models.Book.objects.filter(price__gt=400)
-res = models.Book.objects.filter(price__lt=300)
-res =models.Book.objects.filter(price__range=(300,500))
-res =models.Book.objects.filter(price__in=(300,500,400))
-res =models.Book.objects.filter(publish_date__year=2019)
-res =models.Book.objects.filter(publish_date__month=(2019))
-res =models.Book.objects.filter(tilte__icontains=(2019))
-res =models.Book.objects.filter(tilte__contains=(2019))
-print(res.query)
-print(res)
-```
+   ```python
+   res = models.Book.objects.filter(price__gt=400)
+   res = models.Book.objects.filter(price__lt=300)
+   res =models.Book.objects.filter(price__range=(300,500))
+   res =models.Book.objects.filter(price__in=(300,500,400))
+   res =models.Book.objects.filter(publish_date__year=2019)
+   res =models.Book.objects.filter(publish_date__month=(2019))
+   res =models.Book.objects.filter(tilte__icontains=(2019))
+   res =models.Book.objects.filter(tilte__contains=(2019))
+   print(res.query)
+   print(res)
+   ```
 
 * 查看 所有orm内部sql语句(拷贝以下代码到settings.py文件即可)
 
@@ -569,6 +571,8 @@ LOGGING = {
     }
 }
 ```
+
+
 
 ### django如何创建表外键关系
 
@@ -613,6 +617,8 @@ class AuthorDetail(models.Model):
     addr = models.CharField(verbose_name='家庭住址', max_length=64)
 
 ```
+
+
 
 ### Django外键字段的增删改查
 
@@ -713,6 +719,8 @@ class AuthorDetail(models.Model):
      book_obj.authors.clear()
      ```
 
+
+
 ### Django正反向的概念
 
 >**跨表查询口诀
@@ -725,53 +733,88 @@ class AuthorDetail(models.Model):
 
   **总结：就是看外键在谁那里**
 
-1. 基于对象的跨表的查询（mysql子查询）
 
-   * 例题一
 
-   ```python
-   # 查询书籍主键为1的出版社名称
-   book_obj = models.Book1.objects.filter(pk=1).first()
-   res = book_obj.publish.name
-   print(res)
-   ```
+[多表操作参考博文](https://www.cnblogs.com/xiaoyuanqujing/articles/11643910.html)
 
-   * 例题二
+### 基于对象的跨表的查询（mysql子查询）
 
-   ```python
-   # 查询书籍主键id为1的作者姓名
-   book_obj = models.Book1.objects.filter(pk=1).first()
-   # print(book_obj.authors)  # app01.Author.None
-   res = book_obj.authors.all().last().name
-   print(res)
-   ```
+```python
+# 查询书籍主键为1的出版社名称
+book_obj = models.Book1.objects.filter(pk=1).first()
+res = book_obj.publish.name
+print(res)
+```
 
-   * 例题三
+```python
+# 查询书籍主键id为1的作者姓名
+book_obj = models.Book1.objects.filter(pk=1).first()
+# print(book_obj.authors)  # app01.Author.None
+res = book_obj.authors.all().last().name
+print(res)
+```
 
-   ```python
-   #查询zzj作者手机
-   author_obj = models.Author.objects.filter(name='zzj').last()
-   res = author_obj.author_detail.phone
-   print(res)
-   ```
+```python
+#查询zzj作者手机
+author_obj = models.Author.objects.filter(name='zzj').last()
+res = author_obj.author_detail.phone
+print(res)
+```
 
-   **外键字段关联的数据可能有多条还是单条来决定是否加all()**
+```总结：外键字段关联的数据可能有多条还是单条来决定是否加all()```
 
-   * 例题四
+```python
+# 查询是东方出版社出过的书籍
+publish_obj = models.Publish.objects.filter(name='东方出版社').first()
+res = publish_obj.book1_set.all().values('title',)
+print(res)
+```
 
-   ```python
-   # 查询是东方出版社出过的书籍
-   publish_obj = models.Publish.objects.filter(name='东方出版社').first()
-   res = publish_obj.book1_set.all().values('title',)
-   print(res)
-   ```
+```python
+# 查询手机号是120的作者
+author_detail_obj = models.AuthorDetail.objects.filter(phone=110).first()
+print(author_detail_obj.author.name)
+```
 
-   * 例题五
+```总结：当结果为多个的时候需要用_set.all()反之不需要用_set.all()```
 
-   ```python
-   
-   ```
 
-   
 
-1. 基于双下划线跨表查询（连表查询）
+### 基于双下划线跨表查询（连表查询）
+
+```python
+# 查询主键为1的书籍的出版社名称
+res = models.Book.objects.filter(pk=1).values('publish__name','publish__addr','title')
+print(res)
+# 查询东方出版社出版社过的书籍名称
+res = models.Publish.objects.filter(name='东方出版社').values('book__title')
+print(res)
+#查询主键为1的书籍的出版社名称( 不用Book表 )
+res = models.Publish.objects.filter(book__pk=1).values('name')
+print(res)
+# 查询书籍主键为1的书对应的作者的手机号码
+res = models.AuthorDetail.objects.filter(author__book1__pk=1).values('phone')
+print(res)
+```
+
+### 聚合查询
+
+```python
+# 关键字 
+aggregate
+from django.db.models import Max,Min,Count,Sum,Avg
+# 只要是跟数据库相关的模块 一般情况下都在django.db.models下面
+res = models.Book.objects.aggregate(Sum('price'),Count('pk'),Avg('price'),Max('price'),Min('price'))
+```
+
+### 分组查询
+
+```python
+# 关键字
+annotate
+ 
+# 统计不止一个作者的图书
+res = models.Book.objects.annotate(ac=Count('authors__pk')).filter(ac__gt=1).values('title','ac')
+print(res)
+```
+
