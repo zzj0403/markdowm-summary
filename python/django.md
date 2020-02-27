@@ -812,9 +812,176 @@ res = models.Book.objects.aggregate(Sum('price'),Count('pk'),Avg('price'),Max('p
 ```python
 # 关键字
 annotate
+
+'''
+models后面点什么表名 就按照什么分组
+	models.Book.objects.annotate  按照书分组
+如果我想按照表中的某个字段分组 
+	models.Book.objects.values('price').annotate()  values括号内写什么就按照什么分组
+'''
  
+# 统计作者出的价格最高的一本书
+res = models.Author.objects.annotate(mp=Max('book1__price')).values('name','mp')
+print(res)
+
+# 统计每个出版社出版了多少书
+res = models.Publish.objects.annotate(bc=Count('book1__pk')).values('name','bc')
+print(res)
+
 # 统计不止一个作者的图书
-res = models.Book.objects.annotate(ac=Count('authors__pk')).filter(ac__gt=1).values('title','ac')
+res = models.Book1.objects.annotate(ac=Count('authors__pk')).filter(ac__gt=1).values('title','ac')
+print(res)
+
+# 4.查询各个作者出的书的总价格
+res = models.Author.objects.annotate(sb=Sum('book1__price')).values('name', 'sb')
 print(res)
 ```
 
+`你要统计的作为分组，annotate后面跟着查的数据`
+
+### F与Q查询
+
+```python
+from django.db.models import F ,Q
+
+# F
+
+# 1 查询 库存数大于卖出数的书籍名称
+res = models.Book.objects.filter(kucun__gt=900)  #查询条件数据来源于数据库表其他字段
+res = models.Book.objects.filter(kucun__gt=F('maichu'))
+print(res)
+
+# 2 将所有书籍的价格全部上涨100块
+models.Book.objects.update(price=F('price')+100)
+
+# 3 给所有书的名字后面加爆款  （了解）
+# 报错
+models.Book.objects.update(title=F('title')+'爆款')
+
+# 正确写法 较为繁琐
+from django.db.models.functions import Concat
+from django.db.models import Value
+
+ret3 = models.Book.objects.update(name=Concat(F('name'), Value('爆款')))
+
+
+#F
+
+"""
+filter在不借助于其他任何方法的前提下 只支持and关系
+"""
+res = models.Book.objects.filter(Q(title='三国演义'),Q(kucun=1000))  # 逗号隔开还是and关系
+res = models.Book.objects.filter(Q(title='三国演义')|Q(kucun=1000))  # |  or
+res = models.Book.objects.filter(~Q(title='三国演义')|Q(kucun=1000))  #  ~  not
+print(res)
+
+
+# Q
+q = Q()  # 1 先生成一个q对象  q对象默认也是and关系
+
+q.connector = 'or'  # 将默认的and关系改为or
+q.children.append(('title','三国演义'))  # 添加筛选条件
+q.children.append(('kucun',1000))
+
+res = models.Book1.objects.filter(q)
+print(res)
+```
+
+### 常用字段及参数 
+
+**[链接参考](https://www.cnblogs.com/liuqingzheng/articles/9627915.html)**
+
+| ORM常用字段         | 对应mysql类型及用法                             |
+| :------------------ | ----------------------------------------------- |
+| AutoField()         | 专门用来定义表的主键字段 primary_key = True     |
+| CharField()         | 必须指定max_length  对应到数据库是varchar类型   |
+| IntergerField()     | int                                             |
+| BigIntergerField()  | bigint                                          |
+| DecimalField()      | decimal(小数) max_digits decimal_places         |
+| EmailField()        | varchar                                         |
+| DateField()         | date                                            |
+| DateTimeField()     | datetime                                        |
+| BooleanField(Field) | 布尔值类型（但是真正到了数据库会自动转换成1/0） |
+| TextField(Field)    | 文本类型（专门用来存储大段文本内容!!!）         |
+| FileField(Field)    | 字符串，路径保存在数据库                        |
+
+```python
+# 参数详情
+DateField()			date
+DateTimeField()  datetime
+# 有两个参数
+  - auto_now_add:在数据创建的时候会自动将当前创建时间添加到该字段中，后续不会修改除非人为主动修改
+  - auto_now:每一次修改数据的时候 都会将当前修改的时候自动添加到该字段，也就是说展示的永远是最新的一次操作时间
+
+FileField(Field) 字符串，路径保存在数据库，文件上传到指定目录
+	- upload_to:用来指定文件的存储位置
+"""
+```
+
+### choices参数
+
+```python
+针对可以将所有的情况列举完全的字段，你就可以考虑使用choices参数
+
+class User(models.Model):
+    username = models.CharField(max_length=32)
+    gender_choices = (
+        (1,'男'),
+        (2,'女'),
+        (3,'其他'),
+    )
+     gender = models.IntegerField(choices=gender_choices)
+
+      
+user_obj = models.User.objects.filter(pk=4).first()
+print(user_obj.gender)
+
+# 针对choices参数的字段  如何展示对应的注释信息
+"""
+    固定语法:get_xxx_display()
+    如果有对应关系则展示对应关系
+    如果没有展示的还是数字
+"""
+print(user_obj.get_gender_display())
+```
+
+
+
+### 自定义类型字段	
+
+```python
+from django.db.models import Field
+
+### 自定义char类型字段
+
+class MyCharField(Field):
+    def __init__(self,max_length,*args,**kwargs):
+        self.max_length = max_length
+        super().__init__(max_length=max_length,*args,**kwargs)
+def db_type(self, connection):
+    return 'char(%s)'%self.max_length
+
+
+# 重要参数
+max_length
+default
+null
+verbose_name
+blank=True  # 用来告诉Django admin后台管理该字段可以为空
+# 一般情况下为了兼容 我们会给可以为空的字段加上两个参数
+is_eat = models.CharField(null=True,blank=True)
+
+db_index
+如果db_index=True 则代表着为此字段设置索引。
+
+"""
+注意django1.X在创建外键关系的时候默认都是级联更新纪念删除的
+但是2.X以上需要你自己手动加上
+
+db_constraint
+on_delete
+on_update
+"""
+```
+
+### 
