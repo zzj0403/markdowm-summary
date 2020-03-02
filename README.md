@@ -2,7 +2,7 @@
 
 ## python
 
-* [Django](/python/django.md)
+* [Django](/python/Django/django.md)
 
 ## shell
 

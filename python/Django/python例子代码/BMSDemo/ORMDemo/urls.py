@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^book/add/$', views.book_add, name='book_add'),
     url(r'^book/edit/(?P<edit_id>\d+)/$', views.book_edit, name='book_edit'),
     url(r'^book/delete/(?P<delete_id>\d+)/$', views.book_delete, name='book_delete'),
+    url(r'^aj/$',views.ajax),
     url(r'^test/$', views.test),
+
 
 ]

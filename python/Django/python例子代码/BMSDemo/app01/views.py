@@ -72,3 +72,13 @@ def test(request):
     l = [1, 2, 3, 45, 6, 767, 76, 8, 7]
     publish_queryset = models.Publish.objects.all()
     return render(request, 'test.html', locals())
+
+
+def ajax(request):
+    if request.method == "POST":
+        print(request.POST)
+        v1 = request.POST.get('d1')
+        v2 = request.POST.get('d2')
+        res = int(v1) + int(v2)
+        return HttpResponse(res)
+    return render(request, 'ajax.html', locals())

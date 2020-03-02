@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <script src="{% static 'jquery.js' %}"></script>
+</head>
+<body>
+<input type="text" id="d1">+
+<input type="text" id="d2">=
+<input type="text" id="d3">
+<button id="submit">计算</button>
+<script>
+    //给计算按钮绑定点击事件
+    $('#submit').click(function () {
+        $.ajax({
+            url:'', //不写默认当前页面提交
+            type:'post', // get/post
+            data:{'d1':$('#d1').val(),'d2':$('#d2').val()}, //朝后端发的数据
+            success:function (args) { //异步回掉函数
+                {#alert(args)#}
+                $('#d3').val(args)
+            }
+        })
+    })
+</script>
+</body>
+</html>

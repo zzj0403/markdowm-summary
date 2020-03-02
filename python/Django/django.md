@@ -844,7 +844,7 @@ print(res)
 ```python
 from django.db.models import F ,Q
 
-# F
+# F 能够获取到某个字段的数据作为查询条件
 
 # 1 查询 库存数大于卖出数的书籍名称
 res = models.Book.objects.filter(kucun__gt=900)  #查询条件数据来源于数据库表其他字段
@@ -865,7 +865,7 @@ from django.db.models import Value
 ret3 = models.Book.objects.update(name=Concat(F('name'), Value('爆款')))
 
 
-#F
+#Q
 
 """
 filter在不借助于其他任何方法的前提下 只支持and关系
@@ -876,7 +876,7 @@ res = models.Book.objects.filter(~Q(title='三国演义')|Q(kucun=1000))  #  ~  
 print(res)
 
 
-# Q
+# Q 由于filter 只能是and ，Q可以使用and
 q = Q()  # 1 先生成一个q对象  q对象默认也是and关系
 
 q.connector = 'or'  # 将默认的and关系改为or
@@ -921,7 +921,7 @@ FileField(Field) 字符串，路径保存在数据库，文件上传到指定目
 ### choices参数
 
 ```python
-针对可以将所有的情况枚举的字段，你就可以考虑使用choices参数
+针对可以将所有的情况列举完全的字段，你就可以考虑使用choices参数
 
 class User(models.Model):
     username = models.CharField(max_length=32)
@@ -984,127 +984,30 @@ on_update
 """
 ```
 
-# ajax
+# Ajax
 
-## ajax基本使用
+[网页链接](https://www.cnblogs.com/xiaoyuanqujing/articles/11753411.html)
+
+异步提交、局部刷新
+
+**jQuery封装好的ajax方法 也就意味着你一定要确保html页面加载了jQury**
+
+## 基本语法
 
 ```python
 $('#submit').click(function () {
-    $.ajax({
-      url:'',  # 填写后端地址
-      type:'',  # 填写请求方式
-      data:'',  # 填写交互的数据 如果是get请求该参数可加可不加(url?后面有没有参数)
-      dataType:"JSON",
-      success:function(args){
-        # 异步提交任务一旦有结果会自动将结果返回给该函数 该函数自动执行
-      }
-    })
-}
-# 参数详情
-dataType参数：能够自动帮你讲json格式字符串的二进制数据直接自动解码并反序列化成前端js中的对象类型
-如果HttpReponse返回的需要用这个dataType参数
-而JsonReponse不用使用dataType参数
-"""
-前后端交互数据类型一般都是字典
-在写ajax请求的时候 dataType参数加着 这样是最优的选择
-"""
-```
-
-## 前后端传输数据编码格式(请求头里面的contentType参数)
-
-1. **urlencoded**
-
-   ```
-   form 表单默认提交的编码格式urlencoded
-   	django后端针对符合urlencoded编码格式的数据会自动解析并放到request.POST中供用户使用
-   	urlencoded编码数据格式：username=jason&password=123
-   ```
-
-2. **formdata**
-
-   ```
-   django后端针对formdata格式的数据
-   	会将符合urlencoded格式数据还是自动解析并放到requets.POST
-   	而针对文件数据则会自动解析放到request.FILES中
-   
-   form表单是无法发送json格式数据的
-   ```
-
-3. **json/application**
-
-   ```
-   ajax默认提交数据的方式也是urlencoded 
-   这里就能够解释为什么form和ajax提交post请求后端都是从request.POST中获取数据
-   name=egon&password=123
-   ```
-
-   
-
-## ajax发送json格式数据
-
-```python
-# 前后端数据交互的时候 你不能欺骗对方 一定要做到数据和编码格式一致性
-"""
-django后端针对json格式的数据不会做任何的处理
-而是原封不动的放在request.body中
-需要你自己获取并自己处理
-"""
-print(request.body)
-json_bytes = request.body
-# json.loads可以反序列化符合json格式的二进制数据 能够自动识别需要先解码再反序列化
-json_dict = json.loads(json_bytes)
-
-
-data:JSON.stringify({'name':'tank','password':123}),
-// 编码格式
-contentType:'json/application',
-```
-
-## ajax发送文件数据
-
-```python
-# ajax发送文件数据 需要借助于内置对象FormData
-"""该对象即可以携带文件数据也可以携带普通的键值对(符合urlencoded格式)"""
-function sendMsg() {
-        var myFormData = new FormData();
-        // 添加普通键值对
-        myFormData.append('username','jason');
-        myFormData.append('password','666');
-        // 添加文件数据
-        myFormData.append('myfile',$('#d1')[0].files[0]);
-
+        // 发送ajax请求
         $.ajax({
-            url:'',
-            type:'post',
-            data:myFormData,
-
-            // 发送文件必须要指定两个参数
-            processData:false,  // 告诉浏览器对数据不做任何处理
-            contentType:false,  // 不使用任何编码 因为django后端能够自动识别myFormData对象
-
-            success:function (args) {
-                console.log(agrs)
+            url:'',  // 1.控制后端路径 不写默认朝当前页面所在地址提交数据
+            type:'post',  // 2.控制方式   get/post
+            data:{'d1':$('#d1').val(),'d2':$("#d2").val()},  // 3.朝后端发送的数据
+            success:function (args) {  // 4.异步回调函数 后端一旦有结果返回会立刻触发
+                // args就是异步提交的任务结果
+                $('#d3').val(args)
             }
         })
-    }
+    })
 ```
 
-## 批量插入数据
 
-```python
-def pl(request):
-    # 朝book表中添加1000条数据
-    # for i in range(1,10001):
-    #     # 频繁操作数据库 压力过大
-    #     models.Book.objects.create(title='第%s本书'%i)
-    # 批量插入数据
-    book_list = []
-    for i in range(1,10001):
-        book_list.append(models.Book(title='第%s本书'%i))  # 朝列表中添加数据对象
-    models.Book.objects.bulk_create(book_list)  # 10s
-
-    # 再将数据展示到前端页面
-    book_queryset = models.Book.objects.all()  # 2s
-    return render(request,'pl.html',locals())
-```
 

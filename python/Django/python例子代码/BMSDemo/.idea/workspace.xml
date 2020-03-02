@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abe18bd-dc64-46ab-9832-28df5dee2aa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ORMDemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ORMDemo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ORMDemo/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ORMDemo/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ORMDemo/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/addbook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/book_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/book_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="ProjectId" id="1YFRDbMBr3VLv79SrACXTgfnhTV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,6 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last.edited.regexp" value="Sample Text" />
@@ -147,6 +124,7 @@
       <workItem from="1582860500957" duration="13880000" />
       <workItem from="1583135462043" duration="7713000" />
       <workItem from="1583154036669" duration="23000" />
+      <workItem from="1583154288371" duration="3176000" />
     </task>
     <servers />
   </component>
@@ -154,26 +132,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="392" y="161" key="FileChooserDialogImpl" timestamp="1582879052692">
+    <state x="392" y="161" key="FileChooserDialogImpl" timestamp="1583160372790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="392" y="161" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582879052692" />
-    <state width="1332" height="213" key="GridCell.Tab.0.bottom" timestamp="1583153760794">
+    <state x="392" y="161" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583160372790" />
+    <state width="1022" height="232" key="GridCell.Tab.0.bottom" timestamp="1583160399609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1332" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583153760794" />
-    <state width="1332" height="213" key="GridCell.Tab.0.center" timestamp="1583153760794">
+    <state width="1022" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583160399609" />
+    <state width="1022" height="232" key="GridCell.Tab.0.center" timestamp="1583160399609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1332" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583153760794" />
-    <state width="1332" height="213" key="GridCell.Tab.0.left" timestamp="1583153760794">
+    <state width="1022" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583160399609" />
+    <state width="1022" height="232" key="GridCell.Tab.0.left" timestamp="1583160399608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1332" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583153760794" />
-    <state width="1332" height="213" key="GridCell.Tab.0.right" timestamp="1583153760794">
+    <state width="1022" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583160399608" />
+    <state width="1022" height="232" key="GridCell.Tab.0.right" timestamp="1583160399609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1332" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583153760794" />
+    <state width="1022" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583160399609" />
     <state x="293" y="230" key="com.intellij.ide.util.TipDialog" timestamp="1582606445511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
