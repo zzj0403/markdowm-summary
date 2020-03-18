@@ -121,7 +121,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-## MTV模型![](MTV模型.png)
+## MTV模型![](https://yinyueka-1300115034.cos.ap-shanghai.myqcloud.com/test/MTV.png)
 
 ## 路由层
 
@@ -1108,3 +1108,4 @@ def pl(request):
     return render(request,'pl.html',locals())
 ```
 
+## 分页器
