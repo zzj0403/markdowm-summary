@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abe18bd-dc64-46ab-9832-28df5dee2aa8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -44,7 +59,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.alibabacloud.intellij.config.AccountConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -125,11 +140,21 @@
       <workItem from="1583135462043" duration="7713000" />
       <workItem from="1583154036669" duration="23000" />
       <workItem from="1583154288371" duration="3176000" />
+      <workItem from="1583755473401" duration="3833000" />
+      <workItem from="1584117247332" duration="2000" />
+      <workItem from="1584204007626" duration="165000" />
+      <workItem from="1584278240083" duration="349000" />
+      <workItem from="1584361684978" duration="29000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+    </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
     <state x="392" y="161" key="FileChooserDialogImpl" timestamp="1583160372790">
@@ -152,14 +177,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1022" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583160399609" />
-    <state x="293" y="230" key="com.intellij.ide.util.TipDialog" timestamp="1582606445511">
+    <state x="592" y="151" key="SettingsEditor" timestamp="1584204133207">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="293" y="230" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582606445511" />
-    <state x="653" y="361" width="672" height="678" key="search.everywhere.popup" timestamp="1582883151497">
+    <state x="592" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584204133207" />
+    <state x="293" y="230" key="com.intellij.ide.util.TipDialog" timestamp="1584361685342">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="653" y="361" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582883151497" />
+    <state x="293" y="230" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584361685342" />
+    <state x="827" y="300" key="git4idea.merge.GitMergeDialog" timestamp="1584204155504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="827" y="300" key="git4idea.merge.GitMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584204155504" />
+    <state x="653" y="361" width="672" height="678" key="search.everywhere.popup" timestamp="1584204139624">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="653" y="361" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584204139624" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ORMDemo$tests.coverage" NAME="tests Coverage Results" MODIFIED="1582884583910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app01" />
