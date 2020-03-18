@@ -16,7 +16,8 @@ class ParamikoClient:
             self.client.connect(hostname=hostname,
                                 port=settings.PORT,
                                 username=settings.USERNAME,
-                                pkey=self.private_key)
+                                pkey=self.private_key,
+                                compress=True)
             self.client_state = 1
         except Exception as e:
             print(e)
@@ -37,8 +38,9 @@ class ParamikoClient:
             self.sftp_client = paramiko.SFTPClient.from_transport(self.client.get_transport())
         return self.sftp_client
 
-#
+
+# #
 # client = ParamikoClient()
-#
+# #
 # client.connect('47.97.44.176')
 # # print(client.run_cmd('df -h'))
