@@ -1,7 +1,9 @@
 from lib.paramiko_client import ParamikoClient
 from lib.conf.settings import settings
+from lib.log_analysis import log_list_func
 
-if __name__ == '__main__':
+
+def run():
     sftp_client = ParamikoClient()
     for k, v in settings.HOST.items():
         print(k)
@@ -11,4 +13,5 @@ if __name__ == '__main__':
             print('======')
             # 打印日志
             # 分析下载过来的日志，并写入数据库。
-
+            res = log_list_func('../test/' + key + '_access.log')
+            print(res)

@@ -1,38 +1,7 @@
-import paramiko
-import configparser
 
-from lib.conf.settings import settings
-
-
-class ParamikoClient:
-    def __init__(self, ):
-        self.config = configparser.ConfigParser()
-        self.config.read('config.ini')
-        self.client = paramiko.SSHClient()
-        self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self.private_key = paramiko.DSSKey.from_private_key_file(self.config.get('ssh', 'key'))
-
-    def connect(self, hostname):
-        try:
-            self.client.connect(hostname=hostname,
-                                port=self.config.get('ssh', 'port'),
-                                username=self.config.get('ssh', 'username'),
-                                pkey=self.private_key)
-            self.client_state = 1
-        except Exception as e:
-            print(e)
-        try:
-            self.client.close()
-        except:
-            pass
-
-
-def run_cmd(self, com_str):
-    stdin, stdout, stderr = self.client.exec_command(com_str)
-    data = stdout.readlines()
-    return data
-
-
-client = ParamikoClient()
-client.connect('47.97.44.176')
-# res = client.run_cmd('df -h')
+import re
+file = '185.153.199.118 - - [18/Mar/2020:01:37:27 +0800] "\x03\x00\x00/*\xE0\x00\x00\x00\x00\x00Cookie: mstshash=Administr" 400 "173" "-" "-" "-" "-" "0.280" "-"'
+log_fmt = r'(?P<ip>\d+.*) - - \[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+) (?P<request>\S+) \S+ (?P<stat_code>\w+) \"(?P<boy_size>\w+)\" \"(?P<request_body>\S+)\" \S+ \"(?P<user_agent>[^\"]+)\" \S+ \"(?P<request_time>\d.\d+)\" \S+'
+regex = re.compile(log_fmt, )
+matches = regex.match(file)
+print(matches)l
