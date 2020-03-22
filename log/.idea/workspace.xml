@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6dfb68b-a4da-48b7-86f0-64e2f943961c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/mysql_contorl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/poll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/log_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/log_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_access.log" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_access.log" afterDir="false" />
-    </list>
+    <list default="true" id="d6dfb68b-a4da-48b7-86f0-64e2f943961c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,8 +188,16 @@
       <workItem from="1584531441133" duration="13405000" />
       <workItem from="1584769465551" duration="20398000" />
       <workItem from="1584882230020" duration="42000" />
-      <workItem from="1584882323958" duration="637000" />
+      <workItem from="1584882323958" duration="688000" />
     </task>
+    <task id="LOCAL-00001" summary="111">
+      <created>1584883035815</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584883035815</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +216,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="111" />
+    <option name="LAST_COMMIT_MESSAGE" value="111" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="742" y="222" key="#Custom_Plugin_Repositories" timestamp="1584546115766">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -231,6 +233,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="798" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584510738048" />
+    <state x="539" y="105" key="CommitChangelistDialog2" timestamp="1584883034909">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584883034909" />
     <state x="1263" y="360" key="FileChooserDialogImpl" timestamp="1584798174401">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
