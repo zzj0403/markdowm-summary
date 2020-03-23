@@ -12,7 +12,7 @@ from lib.conf.settings import settings
 
 
 def format_log(line):
-    #log_fmt = r'(?P<ip>\d+.*) - - \[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+) (?P<request>\S+) \S+ (?P<stat_code>\w+) \"(?P<boy_size>\w+)\" \"(?P<request_body>\S+)\" \S+ \"(?P<user_agent>[^\"]+)\" \S+ \"(?P<request_time>\d.\d+)\" \S+'
+    # log_fmt = r'(?P<ip>\d+.*) - - \[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+) (?P<request>\S+) \S+ (?P<stat_code>\w+) \"(?P<boy_size>\w+)\" \"(?P<request_body>\S+)\" \S+ \"(?P<user_agent>[^\"]+)\" \S+ \"(?P<request_time>\d.\d+)\" \S+'
     log_fmt = r'(?P<ip>\d+.*)\s-\s-\s\[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+)\s(?P<request>\S+)\s\S+\s(?P<stat_code>\w+)\s\"(?P<boy_size>\w+)\"\s\"(?P<request_body>[^\"]*)\"\s\S+\s\"(?P<user_agent>[^\"]+)\"\s\S+\s\"(?P<request_time>\d.\d+)\"\s\S+'
     regex = re.compile(log_fmt, )
     matches = regex.match(line)
@@ -67,16 +67,13 @@ def log_list_func(line):
         # user_agent = matches.group('user_agent')
         user_agent = analysis_agent(matches.group('user_agent'))
         request_time = matches.group('request_time')
-        log_list = [time, ip, method, request, stat_code, boy_size, request_body, user_agent, request_time]
+        log_list = [time, ip, method, request, stat_code, boy_size, request_body, user_agent, request_time, 1]
+
         return log_list
 
-
-# # #
-# if __name__ == '__main__':
-#     res = log_list_func()
-#     print(res)
-with open(r'C:\Users\Administrator\Desktop\markdowm-summary\log\test\test_access.log', 'r', encoding='utf8') as f:
-    lines = f.readlines()
-    for line in lines:
-        res = log_list_func(line)
-        print(res)
+# def file_read(log_path):
+#     with open(log_path, 'r', encoding='utf8') as f:
+#         lines = f.readlines()
+#         for line in lines:
+#             res = log_list_func(line)
+#         return res

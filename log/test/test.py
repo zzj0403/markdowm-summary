@@ -1,7 +1,33 @@
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Float, Enum
+from sqlalchemy.ext.declarative import declarative_base
 
-import re
-file = '185.153.199.118 - - [18/Mar/2020:01:37:27 +0800] "\x03\x00\x00/*\xE0\x00\x00\x00\x00\x00Cookie: mstshash=Administr" 400 "173" "-" "-" "-" "-" "0.280" "-"'
-log_fmt = r'(?P<ip>\d+.*) - - \[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+) (?P<request>\S+) \S+ (?P<stat_code>\w+) \"(?P<boy_size>\w+)\" \"(?P<request_body>\S+)\" \S+ \"(?P<user_agent>[^\"]+)\" \S+ \"(?P<request_time>\d.\d+)\" \S+'
-regex = re.compile(log_fmt, )
-matches = regex.match(file)
-print(matches)l
+engine = create_engine("mysql+pymysql://zzj:4dAnFoLdh7mB39yCp76E@47.97.44.176:13006/test?charset=utf8'",
+                       max_overflow=5,
+                       echo=True,
+                       )
+# engine.connect()
+Base = declarative_base()
+
+
+class log_table(Base):
+    __tablename__ = 'test1'
+    id = Column(Integer, index=True, primary_key=True)
+    date = Column(DateTime)
+    ip = Column(String(32))
+    method = Column(String(32))
+    request = Column(String(64))
+    stat_code = Column(Integer)
+    boy_size = Column(Integer)
+    request_body = Column(String(64))
+    user_agent = Column(String(32))
+    request_time = Column(Float)
+    Correct_log = Column(Enum('0', '1'), default=1)
+
+
+def create_db():
+    # metadata.create_all创建所有表
+    Base.metadata.create_all(engine)
+
+
+if __name__ == '__main__':
+    create_db()
