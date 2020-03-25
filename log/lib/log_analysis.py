@@ -37,39 +37,38 @@ def parse_time(day, month, year, log_time):
 
 
 def analysis_agent(useragent):
-    if useragent.find('Android'):
-        agent = 'Android'
-        return agent
-    elif useragent.find('Windows'):
-        agent = 'Windows'
-        return agent
-    elif useragent.find('iOS'):
+    if 'iOS' in useragent:
         agent = 'iOS'
-        return agent
+    elif 'Windows' in useragent:
+        agent = 'Windows'
+    elif 'Android' in useragent:
+        agent = 'Android'
     else:
-        return 'other'
+        agent = 'other'
+
+    return agent
 
 
 def log_list_func(line):
     matches = format_log(line)
     if matches:
+        msg = {}
         date = matches.group("day")
         month = matches.group("month")
         year = matches.group("year")
         day_time = matches.group("time")
-        time = parse_time(date, month, year, day_time)
-        ip = matches.group('ip')
-        method = matches.group('method')
-        request = matches.group('request')
-        stat_code = matches.group('stat_code')
-        boy_size = matches.group('boy_size')
-        request_body = matches.group('request_body')
+        msg['time'] = parse_time(date, month, year, day_time)
+        msg['ip'] = matches.group('ip')
+        msg['method'] = matches.group('method')
+        msg['request'] = matches.group('request')
+        msg['stat_code'] = matches.group('stat_code')
+        msg['boy_size'] = matches.group('boy_size')
+        msg['request_body'] = matches.group('request_body')
         # user_agent = matches.group('user_agent')
-        user_agent = analysis_agent(matches.group('user_agent'))
-        request_time = matches.group('request_time')
-        log_list = [time, ip, method, request, stat_code, boy_size, request_body, user_agent, request_time, 1]
-
-        return log_list
+        msg['user_agent'] = analysis_agent(matches.group('user_agent'))
+        msg['request_time'] = matches.group('request_time')
+        msg['correct_log'] = '1'
+        return msg
 
 # def file_read(log_path):
 #     with open(log_path, 'r', encoding='utf8') as f:
