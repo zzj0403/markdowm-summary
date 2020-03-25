@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6dfb68b-a4da-48b7-86f0-64e2f943961c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/mould.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mysql_contorl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/orm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/poll.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/pymysql_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/pymysql_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/error_log_request.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/error_log_request.txt" afterDir="false" />
+    <list default="true" id="d6dfb68b-a4da-48b7-86f0-64e2f943961c" name="Default Changelist" comment="111">
       <change beforePath="$PROJECT_DIR$/files/test_access.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/log_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/log_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +195,7 @@
       <workItem from="1584882323958" duration="688000" />
       <workItem from="1584932521813" duration="30901000" />
       <workItem from="1585044937214" duration="225000" />
-      <workItem from="1585104263526" duration="20551000" />
+      <workItem from="1585104263526" duration="20818000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1584883035815</created>
