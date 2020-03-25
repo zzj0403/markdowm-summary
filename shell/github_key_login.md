@@ -45,3 +45,26 @@
    ```
 
 ## git使用
+
+```
+error: Your local changes to the following files would be overwritten by merge:
+Please, commit your changes or stash them before you can merge.
+```
+
+1. 服务器代码合并本地代码
+
+```shell
+git stash     				# 暂存当前正在进行的工作。
+git pull   origin master 	# 拉取服务器的代码
+git stash pop 				# 合并暂存的代码
+```
+
+2. 服务器代码覆盖本地代码
+
+```shell
+git reset --hard
+git pull origin master 
+```
+
+
+

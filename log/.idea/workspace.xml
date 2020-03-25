@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="d6dfb68b-a4da-48b7-86f0-64e2f943961c" name="Default Changelist" comment="111">
       <change beforePath="$PROJECT_DIR$/files/test_access.log" beforeDir="false" />
+=======
+    <list default="true" id="d6dfb68b-a4da-48b7-86f0-64e2f943961c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/pymysql_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/pymysql_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/error_log_request.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/error_log_request.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/test_access.log" beforeDir="false" afterPath="$PROJECT_DIR$/files/test_access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/log_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/log_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shell/github_key_login.md" beforeDir="false" afterPath="$PROJECT_DIR$/../shell/github_key_login.md" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +63,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\markdowm-summary\log\files" />
+<<<<<<< Updated upstream
       <recent name="C:\Users\Administrator\Desktop\markdowm-summary\log\db" />
+=======
+>>>>>>> Stashed changes
       <recent name="C:\Users\Administrator\Desktop\log\files" />
       <recent name="D:\code\log\lib" />
     </key>
@@ -193,9 +208,19 @@
       <workItem from="1584769465551" duration="20398000" />
       <workItem from="1584882230020" duration="42000" />
       <workItem from="1584882323958" duration="688000" />
+<<<<<<< Updated upstream
       <workItem from="1584932521813" duration="30901000" />
       <workItem from="1585044937214" duration="225000" />
       <workItem from="1585104263526" duration="20818000" />
+=======
+      <workItem from="1584932521813" duration="16865000" />
+      <workItem from="1584968520296" duration="5213000" />
+      <workItem from="1585053627016" duration="668000" />
+      <workItem from="1585058432916" duration="624000" />
+      <workItem from="1585060051713" duration="156000" />
+      <workItem from="1585062522858" duration="2000" />
+      <workItem from="1585063384393" duration="2000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1584883035815</created>
@@ -247,6 +272,7 @@
     <state x="1263" y="360" key="FileChooserDialogImpl" timestamp="1585037433748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+<<<<<<< Updated upstream
     <state x="1263" y="360" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585037433748" />
     <state width="1279" height="306" key="GridCell.Tab.0.bottom" timestamp="1585131038768">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -265,6 +291,26 @@
     </state>
     <state width="1279" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585131038768" />
     <state width="1877" height="345" key="GridCell.Tab.1.bottom" timestamp="1585116073474">
+=======
+    <state x="1263" y="360" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584956778300" />
+    <state width="1319" height="241" key="GridCell.Tab.0.bottom" timestamp="1584973119977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1319" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584973119977" />
+    <state width="1319" height="241" key="GridCell.Tab.0.center" timestamp="1584973119976">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1319" height="241" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584973119976" />
+    <state width="1319" height="241" key="GridCell.Tab.0.left" timestamp="1584973119976">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1319" height="241" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584973119976" />
+    <state width="1319" height="241" key="GridCell.Tab.0.right" timestamp="1584973119977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1319" height="241" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584973119977" />
+    <state width="1279" height="311" key="GridCell.Tab.1.bottom" timestamp="1584936353763">
+>>>>>>> Stashed changes
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="345" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585116073474" />
@@ -284,10 +330,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="651" y="206" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584798204351" />
+<<<<<<< Updated upstream
     <state x="382" y="322" key="com.intellij.ide.util.TipDialog" timestamp="1585104298010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="382" y="322" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585104298010" />
+=======
+    <state x="382" y="322" key="com.intellij.ide.util.TipDialog" timestamp="1585063384325">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="382" y="322" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585063384325" />
+>>>>>>> Stashed changes
     <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1584802615663">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -312,11 +365,15 @@
     <SUITE FILE_PATH="coverage/log$paramiko_client.coverage" NAME="paramiko_client Coverage Results" MODIFIED="1584545787843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
     <SUITE FILE_PATH="coverage/log$config.coverage" NAME="config Coverage Results" MODIFIED="1584516796213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/conf" />
     <SUITE FILE_PATH="coverage/log$mysql_contorl.coverage" NAME="mysql_contorl Coverage Results" MODIFIED="1584776579667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
+<<<<<<< Updated upstream
     <SUITE FILE_PATH="coverage/log$pymysql_test.coverage" NAME="pymysql_test Coverage Results" MODIFIED="1585031163915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/log$settings__1_.coverage" NAME="settings (1) Coverage Results" MODIFIED="1584518333578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/conf" />
     <SUITE FILE_PATH="coverage/log$run.coverage" NAME="run Coverage Results" MODIFIED="1584959003349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/log$log_analysis.coverage" NAME="log_analysis Coverage Results" MODIFIED="1584882240962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
     <SUITE FILE_PATH="coverage/log$start.coverage" NAME="start Coverage Results" MODIFIED="1585130552995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+    <SUITE FILE_PATH="coverage/log$start.coverage" NAME="start Coverage Results" MODIFIED="1584973119970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
     <SUITE FILE_PATH="coverage/log$config__1_.coverage" NAME="config (1) Coverage Results" MODIFIED="1584517416661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/conf" />
     <SUITE FILE_PATH="coverage/log$mould.coverage" NAME="mould Coverage Results" MODIFIED="1585130524150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/log$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1585125936899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />

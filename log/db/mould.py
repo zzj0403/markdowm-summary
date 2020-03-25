@@ -18,7 +18,7 @@ class log(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     time = Column(DateTime, nullable=False)
     ip = Column(String(32), nullable=False)
-    method = Column(String(32), default=None)
+    method = Column(String(32), default=None )
     request = Column(Text, default=None)
     stat_code = Column(Integer, default=None)
     boy_size = Column(Integer, default=None)
