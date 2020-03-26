@@ -12,14 +12,13 @@ from lib.conf.settings import settings
 
 
 def format_log(line):
-    # log_fmt = r'(?P<ip>\d+.*) - - \[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+) (?P<request>\S+) \S+ (?P<stat_code>\w+) \"(?P<boy_size>\w+)\" \"(?P<request_body>\S+)\" \S+ \"(?P<user_agent>[^\"]+)\" \S+ \"(?P<request_time>\d.\d+)\" \S+'
-    # log_fmt = r'(?P<ip>\d+.*)\s-\s-\s\[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+)\s(?P<request>\S+)\s\S+\s(?P<stat_code>\w+)\s\"(?P<boy_size>\w+)\"\s\"(?P<request_body>[^\"]*)\"\s\S+\s\"(?P<user_agent>[^\"]+)\"\s\S+\s\"(?P<request_time>\d.\d+)\"\s\S+'
     log_fmt = r'(?P<ip>\d+.*)\s-\s-\s\[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+)\s(?P<request>\S+)\s\S+\s(?P<stat_code>\w+)\s\"(?P<boy_size>\w+)\"\s\"(?P<request_body>[^\"]*)\"\s\S+\s\"(?P<user_agent>[^\"]+)\"\s\"\S\"\s\"(?P<request_time>\d+.\d+)\".*'
+    log_fmt = r'(?P<ip>\d+.*)\s-\s-\s\[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+\s\"(?P<method>\S+)\s(?P<request>\S+)\s\S+\s(?P<stat_code>\w+)\s\"(?P<boy_size>\w+)\"\s\"(?P<request_body>[^\"]*)\"\s\S+\s\"(?P<user_agent>[^\"]+)\"\s\"[0-9a-zA-Z.:, -]*\"\s\"(?P<request_time>\d+.\d+)\".*'
     regex = re.compile(log_fmt, )
     matches = regex.match(line)
     if not matches:
         log_fmt = r'(?P<ip>\d+.*)\s-\s-\s\[(?P<day>\d+)/(?P<month>\w+)/(?P<year>\d+):(?P<time>\S+)\s\S+.*'
-        with open(settings.REQUEST_ERROR_FILE, 'a', encoding='utf8')as f:
+        with open(settings.REQUEST_ERROR_FILE, 'w', encoding='utf8')as f:
             f.write(line)
             regex = re.compile(log_fmt, )
             matches = regex.match(line)
@@ -93,7 +92,6 @@ def log_list_func(line):
         msg['request_time'] = matches.group('request_time')
         msg['correct_log'] = str(flag)
         return msg
-
 
 # def file_read(log_path):
 #     with open(log_path, 'r', encoding='utf8') as f:
