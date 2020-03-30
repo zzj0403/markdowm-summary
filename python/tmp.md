@@ -1,1 +1,1 @@
-* 点击**[开个黑吧](https://t.me/joinchat/QzwgRxirSS8bju9axtvROA)**+群
+* 点击[开个黑吧](https://t.me/joinchat/QzwgRxirSS8bju9axtvROA)+群
