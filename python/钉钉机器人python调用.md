@@ -19,26 +19,26 @@
    secret = 'SEC******************************'
    # 两者拼接起来
    string_to_sign = '{}\n{}'.format(timestamp, secret)
-   # 
+   # 加密
    hmac_code = hmac.new(secret.encode(), string_to_sign.encode(), digestmod=hashlib.sha256).digest()
-   
    sing = urllib.parse.quote_plus(base64.b64encode(hmac_code))
+   # 重新拼接webhook
    webhook = '{}&timestamp={}&sign={}'.format(webhook, str(timestamp), sing)
+   # 请求头
    header = {
        "Content-Type": "application/json",
        "Charset": "UTF-8",
    }
-   
+   #请求数据
    message = {
-       "msg": "测试",
        "msgtype": "text",
        "text": {
-           "content": "test"
+           "content": "1111"
        },
    }
-   
+   #转成json
    message_json = json.dumps(message)
-   
+   #发送数据
    info = requests.post(url=webhook, data=message_json, headers=header)
    print(info)
    ```
