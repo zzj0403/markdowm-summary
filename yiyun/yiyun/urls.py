@@ -20,7 +20,8 @@ from command_log import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.base),
+    url(r'^test/$', views.test,name='test'),
     url(r'^look_log/', views.log_info, name='log'),
-    # url(r'^add_host/', views.add_host),
+    url(r'^host_list/', views.host_list,name='host_list'),
 
 ]

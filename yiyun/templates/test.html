@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>test</h1>
+    <hr>
+    <button onclick="sendMsg()"> 按钮</button>
+    <script>
+        function sendMsg() {
+            $.ajax({
+                url: '',
+                type: 'post',
+                data: {'id': 2},
+                dataType: 'JSON',
+                success: function (args) {
+                    console.log(args)
+                }
+            })
+        }
+    </script>
+{% endblock %}
