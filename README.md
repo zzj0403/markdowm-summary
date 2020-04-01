@@ -1,5 +1,10 @@
 # Summary
 
+## 价值观
+
+* [罗翔老师专题讲座](https://www.bilibili.com/video/BV1d7411m7UT?t=496)
+  * 观后总结
+
 ## python
 
 * [Django](/python/Django/django.md)
