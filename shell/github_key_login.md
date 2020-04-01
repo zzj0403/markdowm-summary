@@ -21,11 +21,11 @@
 
 3. 找到秘钥
 
-![](111.png)
+![](..\img\github1.png)
 
 4. 打开秘钥并复制到github的settings的[SSH and GPG keys](https://github.com/settings/keys)
 
-   ![](222.png)
+   ![](..\img\github2.png)
 
 5. 修改 .ssh/config文件（可省略）
 
@@ -46,6 +46,8 @@
 
 ## git使用
 
+### 常见错误
+
 ```
 error: Your local changes to the following files would be overwritten by merge:
 Please, commit your changes or stash them before you can merge.
@@ -65,6 +67,16 @@ git stash pop 				# 合并暂存的代码
 git reset --hard
 git pull origin master 
 ```
+
+
+
+### git强制提交本地分支，覆盖远程分支
+
+```shell
+git push origin master --force
+```
+
+
 
 
 
