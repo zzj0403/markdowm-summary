@@ -2,8 +2,11 @@
 
 参考过的博客
 
-* [Singvis](https://www.cnblogs.com/singvis/p/11967984.html)
-* [itlance_ouyang ](https://www.jb51.net/article/134134.htm)
+- [官方文档](http://docs.paramiko.org/en/stable/index.html)
+
+- [Singvis](https://www.cnblogs.com/singvis/p/11967984.html)
+
+- [itlance_ouyang ](https://www.jb51.net/article/134134.htm)
 
 ## 简介
 

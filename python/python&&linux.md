@@ -1,3 +1,39 @@
+# python安装liunx
+
+<hr>
+
+1. 下载
+
+* [python 3.6.10](https://www.python.org/downloads/release/python-3610/)
+
+* 自己的钉钉云存储里有
+
+2. 下载编译python3的依赖包
+
+   ```shell
+   yum install -y gcc patch libffi-devel python-devel  zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+   ```
+
+3. 编译安装
+
+   ```shell
+   # 解压
+   tar -zxvf Python-3.6.10.tgz && cd Python-3.6.10
+   # 编写配置
+   ./configure --prefix=/usr/local
+   # 编译安装 
+   make &&  make install 
+   # 修改环境变量
+   vim  /etc/profile
+   PYTHON_PATH=/usr/local/python3.6
+   export PATH=$PATH:$PYTHON_PATH/bin
+   
+   source /etc/profile
+   
+   ```
+
+   
+
 # python创建虚拟环境
 
 > 本环境是python3为基础
