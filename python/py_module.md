@@ -1,4 +1,6 @@
-# paramiko
+# 模块
+
+## paramiko
 
 参考过的博客
 
@@ -8,7 +10,7 @@
 
 - [itlance_ouyang ](https://www.jb51.net/article/134134.htm)
 
-## 简介
+### 简介
 
 ssh是一个协议，OpenSSH是其中一个开源实现，paramiko是Python的一个库，实现了SSHv2协议(底层使用cryptography)。
 
@@ -19,7 +21,7 @@ pip3 install paramiko
 
 ```
 
-## 简单连接使用
+### 简单连接使用
 
 ```python
 import paramiko
@@ -40,7 +42,7 @@ print(stdout.readlines())
 ssh.close()
 ```
 
-## 简单sftp连接
+### 简单sftp连接
 
 ```python
 import paramiko
@@ -62,13 +64,13 @@ sftp.get(remotepath, localpath)
 client.close()
 ```
 
-## 作为一个类
+### 作为一个类
 
 * 具体请看[github](https://github.com/zzj0403/markdowm-summary/blob/master/log/lib/paramiko_client.py)
 
 * settings对象看conf文件
 
-## 犯过的错误
+### 犯过的错误
 
 ```python 
 # 报错：'str' object has no attribute 'get_fingerprint'
@@ -79,5 +81,28 @@ self.client.connect(hostname=hostname,
                     # pkey=settings.KEY, KEY -> str pkey用的是一个对象不是一个字符串
                     pkey=self.private_key,
                     compress=True) 
+```
+
+## pymysql
+
+### 简单使用
+
+```PYTHON
+import pymysql
+conn = pymysql.connect(
+    host='47.97.44.176',
+    user='zzj',
+    port=13006,
+    password='4dAnFoLdh7mB39yCp76E',
+    database='test',
+    charset='utf8'
+)
+
+cursor = conn.cursor()
+sql = "SELECT * FROM tmp_auto_user_book"
+res = cursor.execute(sql)
+print(res)
+cursor.close()
+conn.close()
 ```
 
