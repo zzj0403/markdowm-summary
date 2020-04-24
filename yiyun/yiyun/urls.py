@@ -21,7 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.base),
     url(r'^test/$', views.test,name='test'),
-    url(r'^look_log/', views.log_info, name='log'),
     url(r'^host_list/', views.host_list,name='host_list'),
 
 ]

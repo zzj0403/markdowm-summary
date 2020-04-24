@@ -6,28 +6,23 @@ import json
 
 # Create your views here.
 
-
-def log_info(request):
-    project_list = models.project_info.objects.all()
-    if request.method == 'POST':
-        # pass
-        print(request.POST.get('project'))
-        print(request.POST.get('host'))
-
-    return render(request, 'log_info.html', locals())
-
-
 def host_list(request):
+    project_list = models.project_info.objects.all()
     if request.method == 'POST':
         project_id = request.POST.get('project_id', None)
         # print(project_id)
         if project_id:
-            host_obj = list(models.host_info.objects.filter(project_id__host_info=project_id))
+            host_obj = models.host_info.objects.filter(project_id=project_id)
             result = []
-            for i in host_obj:
-                # 对应的id和城市名称组成一个字典
-                result.append({'id': i.id, 'name': i.hostname})
-            return JsonResponse(result)
+            for h in host_obj:
+                host_dic = {}
+                host_dic['id'] = h.pk
+                host_dic['hostname'] = h.hostname
+                result.append(host_dic)
+            result = json.dumps(result)
+            print(result)
+            return HttpResponse(result, "application/json")
+    return render(request, 'log_info.html', locals())
 
 
 # return render(request, 'log_info.html', locals())

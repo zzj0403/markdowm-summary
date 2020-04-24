@@ -10,13 +10,56 @@
 6. 其他组件：过滤、筛选、排序、路由
 7. 源码分析
 
-## 接口
+- 安装
 
-1. restful接口规范（采用不同的后台语言，也能使用同样的接口获取数据）
+```bash
+pip install djangorestframework
+```
 
-   组成两大部分：
+- 简单使用
 
-   - url
-     - 
-   - 响应数据
+```python
+urls.py
+urlpatterns = [
+    url(r'^test/$', views.Test.as_view()),
+]
+views.py
+class Test(APIView):
+    def get(self, request, *args, **kwargs):
+        return Response('drf_get_ok')
+```
+
+## 访问的生命周期
+
+1. 请求走的是APIView的as_view方法。
+
+   - 请求走的是APIView的as_view方法。
+
+     ```python
+     class Test(APIView):
+             def get(self, request, *args, **kwargs):
+             return Response('drf_get_ok')
+     ```
+
+   - 进入APIView的as_view调用父类的as_view
+
+     ```python
+     view = super().as_view(**initkwargs)
+     return csrf_exempt(view)
+     # 调用父类as_view返回的view 并禁用csrf
+     ```
+
+   - 父类as_view，方法走的有是APIView的dispatch
+
+     ```python
+     return self.dispatch(request, *args, **kwargs)
+     #self对象是Test，查找方法的路径是：实例->类->父类。test是APIView对象，去rest_framework找dispatch
+     ```
+
+   - 完成dispatch任务返回处理结果.
+
+     ```python
+     request = self.initialize_request(request, *args, **kwargs)
+     # initialize_request 方法处理request请求 放回结果
+     ```
 
