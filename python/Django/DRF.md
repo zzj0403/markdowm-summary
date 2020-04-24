@@ -2,6 +2,7 @@
 
 > - 全称 django-rest framwework
 
+<<<<<<< HEAD
 1. 接口
 2. CBV生命周期源码。
 3. 请求组件，解析组件，响应组件
@@ -62,4 +63,15 @@ class Test(APIView):
      request = self.initialize_request(request, *args, **kwargs)
      # initialize_request 方法处理request请求 放回结果
      ```
+=======
+1. 序列化
+2. 请求和响应
+3. 基于类的视图
+4. 认证和权限
+5. 关联和超链接的apis
+6. 视图集和路由
+7. 概要和客户端库
+
+![DRF_http_request](../../img/DRF_http_request.png)
+>>>>>>> 5f3b0882232b1cbff954c5607722a37bf941bbe1
 
