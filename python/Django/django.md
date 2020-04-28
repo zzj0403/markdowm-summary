@@ -984,6 +984,83 @@ on_update
 """
 ```
 
+## froms组件
+
+> 作用：用来对输入字符的校验
+- myforms.py编写
+
+```python
+from django import forms
+from app01 import models
+
+# 编写输入字段策略
+class RegForm(forms.Form):
+    username = forms.CharField(
+        max_length=8,
+        min_length=3,
+        label='用户名',
+        error_messages={
+            'max_length': '用户名最大8位',
+            'min_length': '用户名最小3位',
+            'required': '用户名不能为空'
+        },
+        # 对输出的字符加上bootstrap的样式
+        widget=forms.widgets.TextInput(attrs={'class': 'form-control'})
+    )
+    
+    
+    # 钩子函数
+    # 全局
+        def clean_username(self):
+        username = self.cleaned_data.get('username')
+        res = models.Userinfo.objects.filter(username=username)
+        if res:
+            self.add_error('username', '用户名已存在')
+        return username
+
+    # 全局钩子 校验两次密码是否一致
+    def clean(self):
+        password = self.cleaned_data.get('password')
+        confirm_password = self.cleaned_data.get('confirm_password')
+        if not password == confirm_password:
+            self.add_error('confirm_password', '两次密码不一致')
+       return self.cleaned_data
+
+    
+```
+
+- views.py
+
+  ```python
+  from app01.myfroms import RegForm
+  from django.shortcuts import render
+  def test(request):
+      form_obj = RegForm()
+      return  render(request,'test.html',locals())
+  ```
+
+  
+
+- test.html
+
+  ```HTML
+  {% extends 'base.html' %}
+  {% block conten %}
+      {% for from in form_obj %}
+          <div>
+              <label for="{{ from.id_for_label }}">{{ from.label }}</label>{{ from }}
+          </div>
+      {% endfor %}
+      <input type="button" class="btn btn-success pull-right" style="margin: 10px" value="提交">
+  {% endblock %}
+  ```
+
+  
+
+## modelfrom组件
+
+
+
 ## 其他使用
 
 ### django用户登入
