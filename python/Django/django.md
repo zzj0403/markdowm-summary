@@ -984,6 +984,7 @@ on_update
 """
 ```
 
+<<<<<<< HEAD
 ## froms组件
 
 > 作用：用来对输入字符的校验
@@ -1062,9 +1063,6 @@ class RegForm(forms.Form):
 
 
 ## 其他使用
-
-### django用户登入
-
 
 
 
