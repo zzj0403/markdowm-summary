@@ -984,7 +984,7 @@ on_update
 """
 ```
 
-<<<<<<< HEAD
+
 ## froms组件
 
 > 作用：用来对输入字符的校验
@@ -1062,13 +1062,29 @@ class RegForm(forms.Form):
 
 
 
-## 其他使用
 
 
+## django的test文件的使用方式
+
+```python
+from django.test import TestCase
+
+# Create your tests here.
+
+#!/usr/bin/env python
+import os
+import sys
+
+if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangojan01.settings")
+    import django
+    django.setup()
 
 
+将manage.py的前面复制下来。导入django包即可，我们这里执行即可对后台的数据进行校验。
 
 
+```
 
 
 

@@ -66,9 +66,71 @@ client.close()
 
 ### 作为一个类
 
-* 具体请看[github](https://github.com/zzj0403/markdowm-summary/blob/master/log/lib/paramiko_client.py)
+* `paramiko`的再次封装
 
-* settings对象看conf文件
+```python
+import paramiko
+
+
+class SSHProxy(object):
+    def __init__(self, hostname):
+        self.hostname = hostname
+        self.port = 22
+        self.username = "zzj"
+        self.private_key = paramiko.RSAKey.from_private_key_file('zzj01')
+        self.transport = None
+
+    def open(self):  # 给对象赋值一个上传下载文件对象连接
+        self.transport = paramiko.Transport((self.hostname, self.port))
+        self.transport.connect(username=self.username, pkey=self.private_key, )
+
+    def command(self, cmd):  # 正常执行命令的连接  至此对象内容就既有执行命令的连接又有上传下载链接
+        ssh = paramiko.SSHClient()
+        ssh._transport = self.transport
+
+        stdin, stdout, stderr = ssh.exec_command(cmd)
+        result = stdout.read()
+        return result
+
+    def upload(self, local_path, remote_path):
+        sftp = paramiko.SFTPClient.from_transport(self.transport)
+        sftp.put(local_path, remote_path)
+        sftp.close()
+        
+    def download(self, remote_path, local_path, ):
+        sftp = paramiko.SFTPClient.from_transport(self.transport)
+        sftp.get(remote_path, local_path )
+        sftp.close()
+        
+    def close(self):
+        self.transport.close()
+
+    def __enter__(self):
+        """with语法一旦触发立刻执行"""
+        self.open()
+        return self  # 该方法返回什么 as语法后面就接受到什么
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """with代码块执行完毕之后自动触发"""
+        self.close()
+
+```
+
+* `SSHProxy`使用
+
+  ```python 
+  
+  with SSHProxy("10.0.0.1")  as obj:
+      res = obj.command('df -h')
+      print(res)
+  with SSHProxy("10.0.0.1")  as obj:
+      obj.upload('run.py', '/tmp/test')
+  
+  
+  
+  ```
+
+  
 
 ### 犯过的错误
 
@@ -83,11 +145,15 @@ self.client.connect(hostname=hostname,
                     compress=True) 
 ```
 
+
+
+
+
 ## pymysql
 
 ### 简单使用
 
-```PYTHON
+```python
 import pymysql
 conn = pymysql.connect(
     host='47.97.44.176',
