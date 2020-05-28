@@ -8,6 +8,7 @@
 
 * [Django](/python/Django/django.md)
 * [钉钉机器人调用](/python/钉钉机器人python调用.md)
+* [七牛云&腾讯云存储_删除和刷新CDN](/python/qiniu&tenxun_sdk.md)
 
 ## shell
 
